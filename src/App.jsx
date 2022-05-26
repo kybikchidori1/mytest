@@ -17,8 +17,8 @@ function App() {
     setData(dataFromServer);
   }, []);
   console.log("data", data);
-  const addUser = (newUser) => {
-    setData((prevState) => [...prevState, newUser]);
+  const addUser = (name, second_name, patronymic_name, email, login) => {
+    setData((prevState) => [...prevState, { name: name, second_name }]);
   };
   return (
     <div className="container">
