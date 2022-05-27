@@ -6,16 +6,32 @@ const Table = ({ users, addUser }) => {
     <>
       <button
         onClick={() => {
-          addUser({
-            name: "Ivan",
-            login: "user1",
-            patronymic_name: "Иванович",
-            second_name: "Иванов",
-            email: "mail1@mail.com",
-          });
+          addUser([
+            {
+              name: "Hui",
+              second_name: "Ivanovich",
+              patronymic_name: "Ivanko",
+              email: "email",
+              login: "useruser",
+            },
+            {
+              name: "Hui",
+              second_name: "Ivanovich",
+              patronymic_name: "Ivanko",
+              email: "email",
+              login: "useruser",
+            },
+            {
+              name: "Hui",
+              second_name: "Ivanovich",
+              patronymic_name: "Ivanko",
+              email: "email",
+              login: "useruser",
+            },
+          ]);
         }}
       >
-        OADSKASJDKASD
+        МОГУЧАЯКНОПКАЕБАТь
       </button>
       <table class="table">
         <thead>

@@ -16,10 +16,11 @@ function App() {
 
     setData(dataFromServer);
   }, []);
-  console.log("data", data);
-  const addUser = (name, second_name, patronymic_name, email, login) => {
-    setData((prevState) => [...prevState, { name: name, second_name }]);
+
+  const addUser = (users) => {
+    setData((prevState) => [...prevState, ...users]);
   };
+
   return (
     <div className="container">
       <Table users={data} addUser={addUser} />
