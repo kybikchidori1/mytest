@@ -1,39 +1,10 @@
 import React from "react";
 import "../Table/Table.scss";
 
-const Table = ({ users, addUser }) => {
+const Table = ({ users }) => {
   return (
     <>
-      <button
-        onClick={() => {
-          addUser([
-            {
-              name: "Hui",
-              second_name: "Ivanovich",
-              patronymic_name: "Ivanko",
-              email: "email",
-              login: "useruser",
-            },
-            {
-              name: "Hui",
-              second_name: "Ivanovich",
-              patronymic_name: "Ivanko",
-              email: "email",
-              login: "useruser",
-            },
-            {
-              name: "Hui",
-              second_name: "Ivanovich",
-              patronymic_name: "Ivanko",
-              email: "email",
-              login: "useruser",
-            },
-          ]);
-        }}
-      >
-        МОГУЧАЯКНОПКАЕБАТь
-      </button>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th>Фамилия</th>
@@ -45,15 +16,17 @@ const Table = ({ users, addUser }) => {
           </tr>
         </thead>
         <tbody>
-          {users.map(({ name, second_name, patronymic_name, email, login }) => (
-            <tr>
-              <th>{name}</th>
-              <th>{second_name}</th>
-              <th>{patronymic_name}</th>
-              <th>{email}</th>
-              <th>{login}</th>
-            </tr>
-          ))}
+          {users.map(
+            ({ name, second_name, patronymic_name, email, login }, index) => (
+              <tr key={index}>
+                <th>{name}</th>
+                <th>{second_name}</th>
+                <th>{patronymic_name}</th>
+                <th>{email}</th>
+                <th>{login}</th>
+              </tr>
+            )
+          )}
         </tbody>
       </table>
     </>
