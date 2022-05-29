@@ -4,26 +4,34 @@ import "../Table/Table.scss";
 const Table = ({ users }) => {
   return (
     <>
+      <div className="table__hat">
+        <div className="table__subhat">Пользователи</div>
+        <button className="table__subbtn">+ Добавить</button>
+      </div>
       <table className="table">
-        <thead>
-          <tr>
-            <th>Фамилия</th>
-            <th>Имя</th>
-            <th>Отчество</th>
-            <th>E-mail</th>
-            <th>Логин</th>
-            <th></th>
+        <thead className="table__header">
+          <tr className="table__row table__row_header">
+            <th className="table__cell table__cell_header">Фамилия</th>
+            <th className="table__cell table__cell_header">Имя</th>
+            <th className="table__cell table__cell_header">Отчество</th>
+            <th className="table__cell table__cell_header">E-mail</th>
+            <th className="table__cell table__cell_header">Логин</th>
+            <th className="table__cell table__cell_header"></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="table__tbody">
           {users.map(
             ({ name, second_name, patronymic_name, email, login }, index) => (
-              <tr key={index}>
-                <th>{name}</th>
-                <th>{second_name}</th>
-                <th>{patronymic_name}</th>
-                <th>{email}</th>
-                <th>{login}</th>
+              <tr key={index} className="table__row table__row_body">
+                <th className="table__cell table__cell_header">{name}</th>
+                <th className="table__cell table__cell_header">
+                  {second_name}
+                </th>
+                <th className="table__cell table__cell_header">
+                  {patronymic_name}
+                </th>
+                <th className="table__cell table__cell_header">{email}</th>
+                <th className="table__cell table__cell_header">{login}</th>
               </tr>
             )
           )}

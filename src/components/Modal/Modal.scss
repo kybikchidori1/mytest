@@ -6,10 +6,50 @@
 .header {
     height: 56px;
     background-color: #353D4B;
-  }
+}
 
-  .navbar {
-      height: auto;
-      width: 280px;
-      background-color: #ffffff;
-  }
+
+.wrapper {
+
+    display: flex;
+    width: 100%;
+
+    .navbar {
+        width: 280px;
+    }
+
+    .content {
+        background-color:#E5E5E5;
+        justify-content: space-around;
+        width: 100%;
+
+        .table__hat {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            margin: 36px;
+
+            .table__subhat {
+                font-family: "Roboto", sans-serif;
+                font-size: 20px;
+                line-height: 28px;
+                text-align: center;
+            }
+
+            .table__subbtn {
+                font-family: "Roboto", sans-serif;
+                font-size: 14px;
+                line-height: 20px;
+                text-align: center;
+                padding: 8px 32px 8px 32px;
+                border-radius: 6px;
+                background-color: #4587ED;
+                color: white;
+                border: none;
+            }
+        }
+
+        
+    }
+}
+

@@ -26,10 +26,10 @@ function App() {
     <div className="App">
       <div className="header"></div>
       <div className="wrapper">
-        <div className="navbar">navbar</div>
+        <div className="navbar"></div>
         <div className="content">
           <Table users={data} />
-          <Modal onAddUser={addUser} />
+          {/* <Modal onAddUser={addUser} /> */}
         </div>
       </div>
       {false && <Modal />}
