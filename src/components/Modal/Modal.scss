@@ -16,6 +16,7 @@
 
     .navbar {
         width: 280px;
+        height: auto;
     }
 
     .content {
@@ -29,11 +30,13 @@
             text-align: center;
             margin: 36px;
 
+
             .table__subhat {
                 font-family: "Roboto", sans-serif;
                 font-size: 20px;
                 line-height: 28px;
                 text-align: center;
+                font-weight: bold;
             }
 
             .table__subbtn {
@@ -49,7 +52,41 @@
             }
         }
 
+
+        table {
+            width: 94%;
+            font-family: "Roboto", sans-serif;
+            border-collapse: collapse;
+            text-align: left;
+            margin-left: 32px;
+            margin-right: 32px;
+            margin-bottom: 100%;
+          }
+          th {
+            background-color:white;
+            border:none;
+            border-radius: 10px;
+            font-weight: normal;
+            color: black;
+            font-weight: bold;
+            padding: 10px 32px;
+            border-bottom: 4px ;
+          }
+          td {
+            background-color:white;
+            border:none;
+            border-radius: 10px;
+            color: black;
+            border-bottom: 4px;
+            padding: 10px 32px;
+            transition: .3s linear;
+          }
+
+          tr:hover td {
+            color: #6699ff;
+          }
         
+       
     }
 }
 

@@ -10,28 +10,28 @@ const Table = ({ users }) => {
       </div>
       <table className="table">
         <thead className="table__header">
-          <tr className="table__row table__row_header">
-            <th className="table__cell table__cell_header">Фамилия</th>
-            <th className="table__cell table__cell_header">Имя</th>
-            <th className="table__cell table__cell_header">Отчество</th>
-            <th className="table__cell table__cell_header">E-mail</th>
-            <th className="table__cell table__cell_header">Логин</th>
-            <th className="table__cell table__cell_header"></th>
+          <tr className="table__row_header">
+            <th className="table__cell_header">Фамилия</th>
+            <th className="table__cell_header">Имя</th>
+            <th className="table__cell_header">Отчество</th>
+            <th className="table__cell_header">E-mail</th>
+            <th className="table__cell_header">Логин</th>
+            <th className="table__cell_header"></th>
           </tr>
         </thead>
         <tbody className="table__tbody">
           {users.map(
             ({ name, second_name, patronymic_name, email, login }, index) => (
-              <tr key={index} className="table__row table__row_body">
-                <th className="table__cell table__cell_header">{name}</th>
-                <th className="table__cell table__cell_header">
-                  {second_name}
-                </th>
-                <th className="table__cell table__cell_header">
-                  {patronymic_name}
-                </th>
-                <th className="table__cell table__cell_header">{email}</th>
-                <th className="table__cell table__cell_header">{login}</th>
+              <tr key={index} className="table__row_body">
+                <td className="table__cell_body">{name}</td>
+                <td className="table__cell_body">{second_name}</td>
+                <td className="table__cell_body">{patronymic_name}</td>
+                <td className="table__cell_body">{email}</td>
+                <td className="table__cell_body">{login}</td>
+                <td>
+                  <button>Изменить</button>
+                  <button>Удалить</button>
+                </td>
               </tr>
             )
           )}
