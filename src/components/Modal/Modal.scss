@@ -1,8 +1,146 @@
-.modal {
-    position: absolute;
-    top: 50%;
-    display: flex;
+.modal__background {
+    position: fixed;
+    overflow: auto;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color:#353d4b4f;
+    z-index: 1000;
+
+    .modal__background:target {
+        display: block;
+    }
+
+    .modal__window {
+            display: table;
+            width: 100%;
+            height: 100%;
+
+        .modal__window_area {
+            display: table-cell;
+            padding: 0 1em;
+            vertical-align: middle;
+            text-align: center;
+
+            .modal__content {
+                display: inline-block;
+                width: 608px;
+                height: 620px;
+                background: white;
+                border-radius:10px;
+
+                .modal__header {
+                    display: flex;
+                    justify-content: space-between;
+                    background:#353D4B;
+                    height: 56px;
+                    border-radius:10px 10px 0 0;
+
+                    .modal__title {
+                        font-family: "Roboto", 
+                        sans-serif;
+                        font-size: 16px;
+                        line-height: 24px;
+                        color:white;
+
+                        padding: 16px;
+                        margin-left: 194px;
+                    }
+
+                    .modal__close {
+                        background: url(img/X.svg) no-repeat;
+                        padding: 10px;
+                        border:none;
+                        text-align: center;
+                        vertical-align: middle;
+
+                        margin: 18px 24px 18px 0;
+
+
+                    }
+                }
+
+
+                .modal__content_input {
+                    margin-left: 64px;
+                    margin-top: 36px;
+                    display: flex;
+                    flex-direction: column;
+
+                    text-align: left;
+
+                    .input__dialog {
+                        margin-top: 28px;
+
+                        .input__title {
+                            font-family: "Roboto", sans-serif;
+                            font-size: 14px;
+                            color:#818C99;
+                            margin-bottom: 4px;
+                        }
+
+                        .input {
+                            font-family: "Roboto", sans-serif;
+                            font-size: 14px;
+                            padding-left: 12px;
+                            
+
+                            background-color:#F9FAFC;
+                            border:solid #EBECEF;
+                            border-width: 2px;
+                            border-radius: 6px;
+                            height: 36px;
+                            width: 480px;
+
+
+                        
+                        }
+
+                        .input::placeholder {color:#B8C1CC}
+                    }
+                }
+
+                .modal__footer {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: row-reverse;
+
+                    margin-top: 56px;
+                    background:#F6F7F9;
+                    height: 60px;
+                    border-radius:0 0 10px 10px;
+
+                    .btn__add {
+                        margin-right: 24px;
+                        margin-top: 12px;
+                        font-family: "Roboto", sans-serif;
+                        font-size: 14px;
+                        line-height: 20px;
+                        color:rgba(255, 255, 255, 0.4);
+                        opacity: 0.5;
+
+
+
+                        width: 153px;
+                        height: 36px;
+                        border-radius: 6px;
+                        background-color:#4587ED;
+                        border: #4587ED;
+
+                    }
+
+
+                }
+
+            }
+
+           
+        }
+    }
 }
+
+
 
 .header {
     height: 56px;
@@ -17,13 +155,14 @@
 
     .navbar {
         width: 280px;
-        height: auto;
+        height: 100vh;
     }
 
     .content {
         background-color:#E5E5E5;
         justify-content: space-around;
         width: 100%;
+        height: 100vh;
 
         .table__hat {
             display: flex;
@@ -64,7 +203,6 @@
             vertical-align: center;
 
 
-            margin-bottom: 100%;
             border: 35px solid #E5E5E5;
             border-collapse: collapse; 
         }

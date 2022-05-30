@@ -24,12 +24,12 @@ function App() {
 
   return (
     <div className="App">
+      <Modal onAddUser={addUser} />
       <div className="header"></div>
       <div className="wrapper">
         <div className="navbar"></div>
         <div className="content">
           <Table users={data} />
-          <Modal onAddUser={addUser} />
         </div>
       </div>
     </div>
