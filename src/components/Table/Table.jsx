@@ -29,8 +29,10 @@ const Table = ({ users }) => {
                 <td className="table__cell_body">{email}</td>
                 <td className="table__cell_body">{login}</td>
                 <td>
-                  <button>Изменить</button>
-                  <button>Удалить</button>
+                  <div className="area__btn">
+                    <button className="change__btn"></button>
+                    <button className="trash__btn"></button>
+                  </div>
                 </td>
               </tr>
             )

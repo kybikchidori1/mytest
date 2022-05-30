@@ -29,10 +29,9 @@ function App() {
         <div className="navbar"></div>
         <div className="content">
           <Table users={data} />
-          {/* <Modal onAddUser={addUser} /> */}
+          <Modal onAddUser={addUser} />
         </div>
       </div>
-      {false && <Modal />}
     </div>
   );
 }
