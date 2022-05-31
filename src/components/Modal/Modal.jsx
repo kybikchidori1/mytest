@@ -8,7 +8,7 @@ const emptyUser = {
   login: "",
 };
 
-const Modal = ({ onAddUser }) => {
+const Modal = ({ onAddUser, active, setActive }) => {
   const [newUserData, setNewUserData] = useState(emptyUser);
 
   const changeNewUserData = (e) => {
@@ -28,13 +28,19 @@ const Modal = ({ onAddUser }) => {
   };
 
   return (
-    <div className="modal__background">
+    <div
+      className={active ? "modal__background active" : "modal__background"}
+      onClick={() => setActive(false)}
+    >
       <div className="modal__window">
         <div className="modal__window_area">
-          <div className="modal__content">
+          <div className="modal__content" onClick={(e) => e.stopPropagation()}>
             <div className="modal__header">
               <div className="modal__title">Создание пользователя</div>
-              <button className="modal__close"></button>
+              <button
+                className="modal__close"
+                onClick={() => setActive(false)}
+              ></button>
             </div>
             <div className="modal__content_input">
               <div className="input__dialog">

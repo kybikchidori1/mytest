@@ -10,7 +10,7 @@ const getMockData = () => {
 
 function App() {
   const [data, setData] = useState([]);
-  const [showModal, setShowModal] = useState(false);
+  const [modalActive, setModalActive] = useState(false);
 
   useEffect(() => {
     const dataFromServer = getMockData().data;
@@ -24,12 +24,16 @@ function App() {
 
   return (
     <div className="App">
-      <Modal onAddUser={addUser} />
+      <Modal
+        onAddUser={addUser}
+        active={modalActive}
+        setActive={setModalActive}
+      />
       <div className="header"></div>
       <div className="wrapper">
         <div className="navbar"></div>
         <div className="content">
-          <Table users={data} />
+          <Table users={data} active={modalActive} setActive={setModalActive} />
         </div>
       </div>
     </div>

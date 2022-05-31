@@ -1,12 +1,14 @@
 import React from "react";
 import "../Table/Table.scss";
 
-const Table = ({ users }) => {
+const Table = ({ users, active, setActive }) => {
   return (
     <>
       <div className="table__hat">
         <div className="table__subhat">Пользователи</div>
-        <button className="table__subbtn">+ Добавить</button>
+        <button className="table__subbtn" onClick={() => setActive(true)}>
+          + Добавить
+        </button>
       </div>
       <table className="table">
         <thead className="table__header">
