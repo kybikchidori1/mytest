@@ -110,13 +110,17 @@
     font-family: "Roboto", sans-serif;
     font-size: 14px;
     line-height: 20px;
-    color:rgba(255, 255, 255, 0.4);
+    color: white;
 
     width: 153px;
     height: 36px;
     border-radius: 6px;
     background-color:#4587ED;
     border: #4587ED;
+}
+
+.btn__add:disabled {
+    opacity: 0.5;
 }
 
 .header {

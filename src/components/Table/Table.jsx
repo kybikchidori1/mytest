@@ -25,14 +25,17 @@ const Table = ({ users, active, setActive }) => {
           {users.map(
             ({ name, second_name, patronymic_name, email, login }, index) => (
               <tr key={index} className="table__row_body">
-                <td className="table__cell_body">{name}</td>
                 <td className="table__cell_body">{second_name}</td>
+                <td className="table__cell_body">{name}</td>
                 <td className="table__cell_body">{patronymic_name}</td>
                 <td className="table__cell_body">{email}</td>
                 <td className="table__cell_body">{login}</td>
                 <td>
                   <div className="area__btn">
-                    <button className="change__btn"></button>
+                    <button
+                      className="change__btn"
+                      onClick={() => setActive(true)}
+                    ></button>
                     <button className="trash__btn"></button>
                   </div>
                 </td>

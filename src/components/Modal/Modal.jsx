@@ -24,18 +24,9 @@ const Modal = ({ onAddUser, active, setActive }) => {
   const pressButtonAdd = () => {
     onAddUser(newUserData);
 
-    setNewUserData(() => emptyUser);
-  };
+    setNewUserData(emptyUser);
 
-  let showBtn = (document.getElementsByClassName("btn__add").disabled = true);
-  const input = document.getElementById("input").value;
-
-  const showBtnAdd = () => {
-    if (input.length > 0) {
-      showBtn.disabled = false;
-    } else {
-      showBtn.disabled = true;
-    }
+    setActive(false);
   };
 
   return (
@@ -62,8 +53,8 @@ const Modal = ({ onAddUser, active, setActive }) => {
                   className="input"
                   placeholder="Введите фамилию"
                   type="text"
-                  name="name"
-                  value={newUserData.name}
+                  name="second_name"
+                  value={newUserData.second_name}
                   onChange={changeNewUserData}
                 />
               </div>
@@ -74,8 +65,8 @@ const Modal = ({ onAddUser, active, setActive }) => {
                   className="input"
                   placeholder="Введите имя"
                   type="text"
-                  name="second_name"
-                  value={newUserData.second_name}
+                  name="name"
+                  value={newUserData.name}
                   onChange={changeNewUserData}
                 />
               </div>
@@ -118,7 +109,13 @@ const Modal = ({ onAddUser, active, setActive }) => {
             </div>
             <div className="modal__footer">
               <button
-                disabled={showBtnAdd}
+                disabled={
+                  !newUserData?.name ||
+                  !newUserData?.second_name ||
+                  !newUserData?.patronymic_name ||
+                  !newUserData?.email ||
+                  !newUserData?.login
+                }
                 className="btn__add"
                 onClick={pressButtonAdd}
               >
