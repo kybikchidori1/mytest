@@ -27,10 +27,22 @@ const Modal = ({ onAddUser, active, setActive }) => {
     setNewUserData(() => emptyUser);
   };
 
+  let showBtn = (document.getElementsByClassName("btn__add").disabled = true);
+  const input = document.getElementById("input").value;
+
+  const showBtnAdd = () => {
+    if (input.length > 0) {
+      showBtn.disabled = false;
+    } else {
+      showBtn.disabled = true;
+    }
+  };
+
   return (
     <div
       className={active ? "modal__background active" : "modal__background"}
-      onClick={() => setActive(false)}
+
+      // onClick={() => setActive(false)} >>>>> Можно нажать на зону вокруг модального окна и оно закроется
     >
       <div className="modal__window">
         <div className="modal__window_area">
@@ -46,6 +58,7 @@ const Modal = ({ onAddUser, active, setActive }) => {
               <div className="input__dialog">
                 <div className="input__title">Фамилия</div>
                 <input
+                  id="input"
                   className="input"
                   placeholder="Введите фамилию"
                   type="text"
@@ -57,6 +70,7 @@ const Modal = ({ onAddUser, active, setActive }) => {
               <div className="input__dialog">
                 <div className="input__title">Имя</div>
                 <input
+                  id="input"
                   className="input"
                   placeholder="Введите имя"
                   type="text"
@@ -68,6 +82,7 @@ const Modal = ({ onAddUser, active, setActive }) => {
               <div className="input__dialog">
                 <div className="input__title">Отчество</div>
                 <input
+                  id="input"
                   className="input"
                   placeholder="Введите отчество"
                   type="text"
@@ -79,6 +94,7 @@ const Modal = ({ onAddUser, active, setActive }) => {
               <div className="input__dialog">
                 <div className="input__title">E-mail</div>
                 <input
+                  id="input"
                   className="input"
                   placeholder="Введите электронную почту"
                   type="text"
@@ -90,6 +106,7 @@ const Modal = ({ onAddUser, active, setActive }) => {
               <div className="input__dialog">
                 <div className="input__title">Логин</div>
                 <input
+                  id="input"
                   className="input"
                   placeholder="Введите логин"
                   type="text"
@@ -100,7 +117,11 @@ const Modal = ({ onAddUser, active, setActive }) => {
               </div>
             </div>
             <div className="modal__footer">
-              <button className="btn__add" onClick={pressButtonAdd}>
+              <button
+                disabled={showBtnAdd}
+                className="btn__add"
+                onClick={pressButtonAdd}
+              >
                 Создать
               </button>
             </div>

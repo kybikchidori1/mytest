@@ -19,7 +19,7 @@ function App() {
   }, []);
 
   const addUser = (user) => {
-    setData((prevState) => [...prevState, user]);
+    setData((prevState) => [user, ...prevState]);
   };
 
   return (
