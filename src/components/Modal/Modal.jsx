@@ -36,7 +36,7 @@ const Modal = ({ onAddUser, active, setActive, edit, data }) => {
           <div className="modal__content" onClick={(e) => e.stopPropagation()}>
             <div className="modal__header">
               <div className="modal__title">
-                {edit.id === data.id
+                {data.id
                   ? "Редактирование пользователя"
                   : "Создание пользователя"}
               </div>

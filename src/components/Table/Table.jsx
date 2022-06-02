@@ -1,13 +1,8 @@
 import React from "react";
 import "../Table/Table.scss";
 
-const Table = ({ users, setActive, edit, setEdit, data }) => {
+const Table = ({ users, setActive, setEdit, setModalDelete }) => {
   const plusAdd = () => {
-    setActive(true);
-  };
-
-  const editUsers = () => {
-    setEdit(true);
     setActive(true);
   };
 
@@ -31,26 +26,33 @@ const Table = ({ users, setActive, edit, setEdit, data }) => {
           </tr>
         </thead>
         <tbody className="table__tbody">
-          {users.map(
-            ({ name, second_name, patronymic_name, email, login }, id) => (
-              <tr key={id} className="table__row_body">
-                <td className="table__cell_body">{second_name}</td>
-                <td className="table__cell_body">{name}</td>
-                <td className="table__cell_body">{patronymic_name}</td>
-                <td className="table__cell_body">{email}</td>
-                <td className="table__cell_body">{login}</td>
-                <td>
-                  <div className="area__btn">
-                    <button
-                      className="change__btn"
-                      onClick={editUsers}
-                    ></button>
-                    <button className="trash__btn"></button>
-                  </div>
-                </td>
-              </tr>
-            )
-          )}
+          {users.map((user) => (
+            <tr key={user.id} className="table__row_body">
+              <td className="table__cell_body">{user.second_name}</td>
+              <td className="table__cell_body">{user.name}</td>
+              <td className="table__cell_body">{user.patronymic_name}</td>
+              <td className="table__cell_body">{user.email}</td>
+              <td className="table__cell_body">{user.login}</td>
+              <td>
+                <div className="area__btn">
+                  <button
+                    className="change__btn"
+                    onClick={() => {
+                      setEdit(user);
+                      setActive(true);
+                    }}
+                  ></button>
+                  <button
+                    className="trash__btn"
+                    onClick={() => {
+                      setEdit(user);
+                      setModalDelete(true);
+                    }}
+                  ></button>
+                </div>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </>
