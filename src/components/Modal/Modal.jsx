@@ -8,7 +8,7 @@ const emptyUser = {
   login: "",
 };
 
-const Modal = ({ onAddUser, active, setActive }) => {
+const Modal = ({ onAddUser, active, setActive, edit, data }) => {
   const [newUserData, setNewUserData] = useState(emptyUser);
 
   const changeNewUserData = (e) => {
@@ -30,16 +30,16 @@ const Modal = ({ onAddUser, active, setActive }) => {
   };
 
   return (
-    <div
-      className={active ? "modal__background active" : "modal__background"}
-
-      // onClick={() => setActive(false)} >>>>> Можно нажать на зону вокруг модального окна и оно закроется
-    >
+    <div className={active ? "modal__background active" : "modal__background"}>
       <div className="modal__window">
         <div className="modal__window_area">
           <div className="modal__content" onClick={(e) => e.stopPropagation()}>
             <div className="modal__header">
-              <div className="modal__title">Создание пользователя</div>
+              <div className="modal__title">
+                {edit.id === data.id
+                  ? "Редактирование пользователя"
+                  : "Создание пользователя"}
+              </div>
               <button
                 className="modal__close"
                 onClick={() => setActive(false)}

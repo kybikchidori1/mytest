@@ -9,13 +9,12 @@ const getMockData = () => {
 };
 
 function App() {
+  const [edit, setEdit] = useState({});
   const [data, setData] = useState([]);
-  const [modalActive, setModalActive] = useState(false);
-  const [modalActiveEdit, setModalActiveEdit] = useState(false);
+  const [modalUser, setModalUser] = useState(false);
 
   useEffect(() => {
     const dataFromServer = getMockData().data;
-
     setData(dataFromServer);
   }, []);
 
@@ -26,20 +25,25 @@ function App() {
   return (
     <div className="App">
       <Modal
+        setData={setData}
+        data={data}
         onAddUser={addUser}
-        active={modalActive}
-        setActive={setModalActive}
+        active={modalUser}
+        setActive={setModalUser}
+        edit={edit}
+        setEdit={setEdit}
       />
       <div className="header"></div>
       <div className="wrapper">
         <div className="navbar"></div>
         <div className="content">
           <Table
+            data={setData}
             users={data}
-            active={modalActive}
-            setActive={setModalActive}
-            activeEdit={modalActiveEdit}
-            setActiveEdit={setModalActiveEdit}
+            active={modalUser}
+            setActive={setModalUser}
+            edit={edit}
+            setEdit={setEdit}
           />
         </div>
       </div>

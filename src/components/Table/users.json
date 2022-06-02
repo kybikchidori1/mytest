@@ -1,6 +1,7 @@
 {
     "data":[
         {
+            "id":1,
             "name":"Иван",
             "second_name":"Иванов",
             "patronymic_name":"Иванович",
@@ -8,6 +9,7 @@
             "login":"user1"
         },
         {
+            "id":2,
             "name":"Петр",
             "second_name":"Петров",
             "patronymic_name":"Сергеевич",
@@ -15,6 +17,7 @@
             "login":"user2"  
         },
         {
+            "id":3,
             "name":"Григорий",
             "second_name":"Сергеев",
             "patronymic_name":"Викторович",
@@ -22,6 +25,7 @@
             "login":"user3"  
         },
         {
+            "id":4,
             "name":"Виктор",
             "second_name":"Федоров",
             "patronymic_name":"Федорович",
@@ -29,6 +33,7 @@
             "login":"user4"  
         },
         {
+            "id":5,
             "name":"Сергей",
             "second_name":"Хвастунов",
             "patronymic_name":"Петрович",
@@ -36,6 +41,7 @@
             "login":"user5"  
         },
         {
+            "id":6,
             "name":"Федор",
             "second_name":"Григорьев",
             "patronymic_name":"Григорьевич",

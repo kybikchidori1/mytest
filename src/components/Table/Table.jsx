@@ -1,12 +1,21 @@
 import React from "react";
 import "../Table/Table.scss";
 
-const Table = ({ users, active, setActive }) => {
+const Table = ({ users, setActive, edit, setEdit, data }) => {
+  const plusAdd = () => {
+    setActive(true);
+  };
+
+  const editUsers = () => {
+    setEdit(true);
+    setActive(true);
+  };
+
   return (
     <>
       <div className="table__hat">
         <div className="table__subhat">Пользователи</div>
-        <button className="table__subbtn" onClick={() => setActive(true)}>
+        <button className="table__subbtn" onClick={plusAdd}>
           + Добавить
         </button>
       </div>
@@ -23,8 +32,8 @@ const Table = ({ users, active, setActive }) => {
         </thead>
         <tbody className="table__tbody">
           {users.map(
-            ({ name, second_name, patronymic_name, email, login }, index) => (
-              <tr key={index} className="table__row_body">
+            ({ name, second_name, patronymic_name, email, login }, id) => (
+              <tr key={id} className="table__row_body">
                 <td className="table__cell_body">{second_name}</td>
                 <td className="table__cell_body">{name}</td>
                 <td className="table__cell_body">{patronymic_name}</td>
@@ -34,7 +43,7 @@ const Table = ({ users, active, setActive }) => {
                   <div className="area__btn">
                     <button
                       className="change__btn"
-                      onClick={() => setActive(true)}
+                      onClick={editUsers}
                     ></button>
                     <button className="trash__btn"></button>
                   </div>
