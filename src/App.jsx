@@ -6,68 +6,99 @@ import Modal from "./components/Modal/Modal";
 import DeleteModal from "./components/Modal/DeleteModal";
 
 const getMockData = () => {
-  return users;
+    return users;
 };
 
 function App() {
-  const [edit, setEdit] = useState({});
-  const [data, setData] = useState(users.data);
-  const [modalDelete, setModalDelete] = useState(false);
-  const [modalUser, setModalUser] = useState(false);
+    const [edit, setEdit] = useState({});
+    const [data, setData] = useState(users.data);
+    const [modalDelete, setModalDelete] = useState(false);
 
-  const deleteUser = () => {
-    setData((state) => state.filter((user) => user.id !== edit.id));
-    setEdit({});
-    setModalDelete(false);
-  };
+    const [userModal, setUserModal] = useState(false);
+    const [currentUser, setCurrentUser] = useState(null);
 
-  useEffect(() => {
-    const dataFromServer = getMockData().data;
-    setData(dataFromServer);
-  }, []);
+    const [counter, setCounter] = useState(6);
 
-  const addUser = (user) => {
-    setData((prevState) => [user, ...prevState]);
-  };
+    const deleteUser = () => {
+        setData((state) => state.filter((user) => user.id !== edit.id));
+        setEdit({});
+        setModalDelete(false);
+    };
 
-  return (
-    <>
-      <div className="App">
-        <Modal
-          setData={setData}
-          data={data}
-          onAddUser={addUser}
-          active={modalUser}
-          setActive={setModalUser}
-          edit={edit}
-          setEdit={setEdit}
-        />
-        <div className="header"></div>
-        <div className="wrapper">
-          <div className="navbar"></div>
-          <div className="content">
-            <Table
-              data={setData}
-              users={data}
-              active={modalUser}
-              setActive={setModalUser}
-              edit={edit}
-              setEdit={setEdit}
-            />
-          </div>
-        </div>
-      </div>
-      {modalDelete && (
-        <DeleteModal
-          close={() => {
-            setEdit({});
-            setModalDelete(false);
-          }}
-          deleteUser={deleteUser}
-        />
-      )}
-    </>
-  );
+    const getNewId = () => {
+        setCounter((prevState) => prevState + 1);
+        return counter + 1;
+    };
+
+    useEffect(() => {
+        const dataFromServer = getMockData().data;
+        setData(dataFromServer);
+    }, []);
+
+    console.log("data", data);
+
+    const userHandler = (userData) => {
+        if (data.some((user) => user.id === userData.id)) {
+            setData(
+                data.map((user) => (user.id === userData.id ? userData : user))
+            );
+        } else {
+            setData((prevState) => [
+                { ...userData, id: getNewId() },
+                ...prevState,
+            ]);
+        }
+    };
+
+    const openModal = (userId) => {
+        if (userId) {
+            setCurrentUser(data.find((user) => user.id === userId));
+        }
+
+        setUserModal(true);
+    };
+
+    const closeModal = () => {
+        setUserModal(false);
+        setCurrentUser(null);
+    };
+
+    return (
+        <>
+            <div className="App">
+                {userModal && (
+                    <Modal
+                        data={data}
+                        userHandler={userHandler}
+                        currentUser={currentUser}
+                        onClose={closeModal}
+                    />
+                )}
+                <div className="header"></div>
+                <div className="wrapper">
+                    <div className="navbar"></div>
+                    <div className="content">
+                        <Table
+                            data={setData}
+                            users={data}
+                            openModal={openModal}
+                            edit={edit}
+                            setEdit={setEdit}
+                        />
+                    </div>
+                </div>
+            </div>
+            {modalDelete && (
+                <DeleteModal
+                    close={() => {
+                        setEdit({});
+                        setModalDelete(false);
+                    }}
+                    deleteUser={deleteUser}
+                />
+            )}
+        </>
+    );
 }
 
 export default App;

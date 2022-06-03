@@ -2,16 +2,15 @@
     position: fixed;
     overflow: auto;
     left: 0;
-    top:0;
+    top: 0;
     width: 100%;
     height: 100%;
-    background-color:#353d4b4f;
+    background-color: #353d4b4f;
     transform: scale(0);
 }
 
 .modal__background.active {
     transform: scale(1);
-
 }
 
 .modal__window {
@@ -30,36 +29,39 @@
     width: 608px;
     height: 620px;
     background: white;
-    border-radius:10px;
+    border-radius: 10px;
 }
 .modal__header {
     display: flex;
     justify-content: space-between;
-    background:#353D4B;
+    background: #353d4b;
     height: 56px;
-    border-radius:10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
+    position: relative;
 }
 .modal__title {
-    font-family: "Roboto", 
-    sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     line-height: 24px;
-    color:white;
-
-    padding: 16px;
-    margin-left: 194px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .modal__close {
     background: url(img/X.svg) no-repeat;
     padding: 10px;
-    border:none;
+    border: none;
     text-align: center;
     vertical-align: middle;
 
-    margin: 18px 24px 18px 0;
+    position: absolute;
+    top: 16px;
+    right: 16px;
 }
-                
+
 .modal__content_input {
     margin-left: 64px;
     display: flex;
@@ -74,7 +76,7 @@
 .input__title {
     font-family: "Roboto", sans-serif;
     font-size: 14px;
-    color:#818C99;
+    color: #818c99;
     margin-bottom: 4px;
 }
 
@@ -82,27 +84,28 @@
     font-family: "Roboto", sans-serif;
     font-size: 14px;
     padding-left: 12px;
-                            
 
-    background-color:#F9FAFC;
-    border:solid #EBECEF;
+    background-color: #f9fafc;
+    border: solid #ebecef;
     border-width: 2px;
     border-radius: 6px;
     height: 36px;
-    width: 480px;                 
+    width: 480px;
 }
 
-.input::placeholder {color:#B8C1CC}
-                              
+.input::placeholder {
+    color: #b8c1cc;
+}
+
 .modal__footer {
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
 
     margin-top: 56px;
-    background:#F6F7F9;
+    background: #f6f7f9;
     height: 60px;
-    border-radius:0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
 }
 .btn__add {
     margin-right: 24px;
@@ -115,8 +118,8 @@
     width: 153px;
     height: 36px;
     border-radius: 6px;
-    background-color:#4587ED;
-    border: #4587ED;
+    background-color: #4587ed;
+    border: #4587ed;
 }
 
 .btn__add:disabled {
@@ -125,12 +128,10 @@
 
 .header {
     height: 56px;
-    background-color: #353D4B;
+    background-color: #353d4b;
 }
 
-
 .wrapper {
-
     display: flex;
     width: 100%;
 }
@@ -140,7 +141,7 @@
 }
 
 .content {
-    background-color:#E5E5E5;
+    background-color: #e5e5e5;
     justify-content: space-around;
     width: 100%;
     height: 100vh;
@@ -150,7 +151,6 @@
     justify-content: space-between;
     text-align: center;
     margin: 36px;
-
 }
 .table__subhat {
     font-family: "Roboto", sans-serif;
@@ -166,31 +166,31 @@
     text-align: center;
     padding: 8px 32px 8px 32px;
     border-radius: 6px;
-    background-color: #4587ED;
+    background-color: #4587ed;
     color: white;
     border: none;
 }
- 
+
 .table {
     width: 100%;
     line-height: 20px;
     font-size: 14px;
     display: table;
-    align-items:center;
+    align-items: center;
     vertical-align: center;
 
-    border: 35px solid #E5E5E5;
-    border-collapse: collapse; 
+    border: 35px solid #e5e5e5;
+    border-collapse: collapse;
 }
 
 .table th {
     padding: 10px;
     padding-left: 32px;
-    align-items:center;
+    align-items: center;
     vertical-align: center;
-    background: #FFFFFF;
+    background: #ffffff;
     border: none;
-    border-bottom: 5px solid #E5E5E5;
+    border-bottom: 5px solid #e5e5e5;
 }
 
 td.table__cell_body {
@@ -202,11 +202,11 @@ td.table__cell_body {
 .table td {
     padding: 5px;
     padding-left: 32px;
-    align-items:center;
+    align-items: center;
     vertical-align: center;
-    background: #FFFFFF;
-    border:none;
-    border-bottom: 5px solid #E5E5E5;
+    background: #ffffff;
+    border: none;
+    border-bottom: 5px solid #e5e5e5;
 }
 
 .area__btn {
@@ -219,14 +219,14 @@ td.table__cell_body {
     background: url(img/ButtonAction.svg) no-repeat;
     padding: 16px 16px 16px 16px;
     margin-right: 16px;
-    border:none;
+    border: none;
 }
 .trash__btn {
     background: url(img/ButtonDelete.svg) no-repeat;
     padding: 16px;
-    border:none;    
+    border: none;
 }
-        
+
 .background {
     position: fixed;
     top: 0;
@@ -291,6 +291,3 @@ td.table__cell_body {
         justify-content: flex-end;
     }
 }
-
-
-
