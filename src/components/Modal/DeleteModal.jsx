@@ -9,10 +9,20 @@ const DeleteModal = ({ close, deleteUser }) => {
           Удалить выбранного пользователя?
         </div>
         <div className="user-modal__footer">
-          <button type="cancel" text="Отменить" onClick={close}>
+          <button
+            className="user-modal__cancel"
+            type="cancel"
+            text="Отменить"
+            onClick={close}
+          >
             Отменить
           </button>
-          <button type="add" text="Удалить" onClick={deleteUser}>
+          <button
+            className="user-modal__delete"
+            type="add"
+            text="Удалить"
+            onClick={deleteUser}
+          >
             Удалить
           </button>
         </div>

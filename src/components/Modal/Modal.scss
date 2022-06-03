@@ -285,9 +285,39 @@ td.table__cell_body {
     &__footer {
         height: 60px;
         background: #f6f7f9;
-        padding: 0 24px;
+        padding: 0 24px 12px 0;
         display: flex;
         align-items: center;
         justify-content: flex-end;
+    }
+
+    &__cancel {
+        margin-right: 24px;
+    margin-top: 12px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #6D7885;
+
+    width: 153px;
+    height: 36px;
+    border-radius: 6px;
+    background-color: #E4E5E8;
+    border: #E4E5E8;
+    }
+
+    &__delete {
+        margin-right: 24px;
+    margin-top: 12px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: white;
+
+    width: 153px;
+    height: 36px;
+    border-radius: 6px;
+    background-color: #4587ed;
+    border: #4587ed;
     }
 }
