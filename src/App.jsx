@@ -63,20 +63,14 @@ function App() {
   return (
     <>
       <div className="App">
-        <div className="header"></div>
-        <div className="wrapper">
-          <div className="navbar"></div>
-          <div className="content">
-            <Table
-              openDeleteModal={openDeleteModal}
-              data={setData}
-              users={data}
-              openModal={openModal}
-              edit={edit}
-              setEdit={setEdit}
-            />
-          </div>
-        </div>
+        <Table
+          openDeleteModal={openDeleteModal}
+          data={setData}
+          users={data}
+          openModal={openModal}
+          edit={edit}
+          setEdit={setEdit}
+        />
       </div>
       {userModal && (
         <Modal
