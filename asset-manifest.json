@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/mytest/static/css/main.7101af9a.css",
+    "main.js": "/mytest/static/js/main.6f3e1cae.js",
+    "static/js/787.d0ac22ec.chunk.js": "/mytest/static/js/787.d0ac22ec.chunk.js",
+    "static/media/ButtonDelete.svg": "/mytest/static/media/ButtonDelete.0e5abf8fdc225d6af05a.svg",
+    "static/media/ButtonAction.svg": "/mytest/static/media/ButtonAction.8ed39f474617bb7a2026.svg",
+    "index.html": "/mytest/index.html",
+    "static/media/plus.svg": "/mytest/static/media/plus.bdf6500de285e6369864759e692761c7.svg",
+    "static/media/X.svg": "/mytest/static/media/X.66cef32eb1de590a58c0.svg",
+    "main.7101af9a.css.map": "/mytest/static/css/main.7101af9a.css.map",
+    "main.6f3e1cae.js.map": "/mytest/static/js/main.6f3e1cae.js.map",
+    "787.d0ac22ec.chunk.js.map": "/mytest/static/js/787.d0ac22ec.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7101af9a.css",
+    "static/js/main.6f3e1cae.js"
+  ]
+}
